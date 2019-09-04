@@ -13,23 +13,23 @@ namespace XpertGroupIC.DTO
     ///         <autor>Joaquin Gonzalez E.</autor>
     ///     </creacion>
     /// </summary
-    public interface IPuntoDTO
+    public class IPuntoDTO
     {
         /// <summary>
         /// Posición X
         /// </summary>
-        int x { get; set; }
+        public int x { get; set; }
         /// <summary>
         /// Posición Y
         /// </summary>
-        int y { get; set; }
+        public int y { get; set; }
         /// <summary>
         /// Posición Z
         /// </summary>
-        int z { get; set; }
+        public int z { get; set; }
         /// <summary>
         /// Valor del punto en laMatriz
         /// </summary>
-        Int64 valor { get; set; }
+        public long valor { get; set; }
     }
 }

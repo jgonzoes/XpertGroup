@@ -24,6 +24,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6.Pruebas", "6.Pruebas", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XpertGroupIC", "XpertGroupIC\XpertGroupIC.csproj", "{9BEA987E-91FE-473B-BE8F-E8214BEE3A90}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XpertGroup.Datos", "XpertGroup.Datos\XpertGroup.Datos.csproj", "{0C741FD8-8DFE-4852-848F-DCF67EA29EEE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +44,10 @@ Global
 		{9BEA987E-91FE-473B-BE8F-E8214BEE3A90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BEA987E-91FE-473B-BE8F-E8214BEE3A90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BEA987E-91FE-473B-BE8F-E8214BEE3A90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C741FD8-8DFE-4852-848F-DCF67EA29EEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C741FD8-8DFE-4852-848F-DCF67EA29EEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C741FD8-8DFE-4852-848F-DCF67EA29EEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C741FD8-8DFE-4852-848F-DCF67EA29EEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +56,7 @@ Global
 		{A348A228-2BD4-4AEB-9112-AA825BF97075} = {9F58FEE4-BF5D-479E-91EB-CA9AD40377EB}
 		{3056A981-81DF-4C42-A969-5D152533A3C6} = {9995981C-FEBE-4880-A79B-6A312530165E}
 		{9BEA987E-91FE-473B-BE8F-E8214BEE3A90} = {C57135B4-3D8A-4691-A80D-13EE5A45D603}
+		{0C741FD8-8DFE-4852-848F-DCF67EA29EEE} = {51141B49-6B54-4F0A-A88B-D99AE30C85FC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E8651627-4D19-448C-94C9-C2D85D0B41E7}

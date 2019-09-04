@@ -32,6 +32,12 @@ namespace XpertGroupIC.Behavior
         /// <param name="puntoInicial"></param>
         /// <param name="puntoFinal"></param>
         /// <returns>Valor de la suma de los valores de la Matirz entre dos puntos</returns>
-        Int64 QueryMatiz(IPuntoDTO puntoInicial, IPuntoDTO puntoFinal);
+        long QueryMatiz(IPuntoDTO puntoInicial, IPuntoDTO puntoFinal);
+
+        /// <summary>
+        /// Recupera la matriz desde persistencia
+        /// </summary>
+        /// <returns></returns>
+        IMatrizDTO RecuperarJson();
     }
 }

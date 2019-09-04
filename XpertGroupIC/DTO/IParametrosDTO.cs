@@ -7,19 +7,19 @@
     ///         <autor>Joaquin Gonzalez E.</autor>
     ///     </creacion>
     /// </summary
-    public interface IParametrosDTO
+    public class IParametrosDTO
     {
         /// <summary>
         /// el número de casos de prueba
         /// </summary>
-        int T { get; set; }
+        public int T { get; set; }
         /// <summary>
         /// Tamaño de la Matriz
         /// </summary>
-        int N { get; set; }
+        public int N { get; set; }
         /// <summary>
         /// M define el número de operaciones. 
         /// </summary>
-        int M { get; set; }
+        public int M { get; set; }
     }
 }

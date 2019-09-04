@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XpertGroup.Datos</name>
+    </assembly>
+    <members>
+        <member name="T:XpertGroup.Datos.DAL.MatrizDAL">
+            <summary>
+                <decripcion>Clase que hace la persistecia de datos </decripcion>
+                <creacion>
+                    <fecha>04 Septiembre 2019</fecha>
+                    <autor>Joaquin Gonzalez E.</autor>
+                </creacion>
+            </summary>
+        </member>
+        <member name="M:XpertGroup.Datos.DAL.MatrizDAL.Inicializar(XpertGroupIC.DTO.IParametrosDTO)">
+            <summary>
+            Metodo para Crear la Matriz e inicializa en 0 todos los valores
+            El valor de N es aumentado en 1 solo para que la matriz sea de 1 a N y no estar restando 1
+            y se ignora el indice = para todas las posiciones
+            </summary>
+            <param name="parametro"></param>
+            <returns>Una Matriz inicializada</returns>
+        </member>
+        <member name="M:XpertGroup.Datos.DAL.MatrizDAL.QueryMatiz(XpertGroupIC.DTO.IPuntoDTO,XpertGroupIC.DTO.IPuntoDTO)">
+            <summary>
+            Metodo que no se implementa en la capa de persistencia
+            </summary>
+            <param name="puntoInicial"></param>
+            <param name="puntoFinal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XpertGroup.Datos.DAL.MatrizDAL.UpdateMatriz(XpertGroupIC.DTO.IPuntoDTO)">
+            <summary>
+            Actualiza el valor en un punto de la matriz
+            </summary>
+            <param name="puntoActualizar"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XpertGroup.Datos.DAL.MatrizDAL.inicializa(XpertGroupIC.Behavior.IMatrizDTO)">
+            <summary>
+            Metodo Privado que inicializa la matriz en ceros
+            </summary>
+            <param name="matriz"></param>
+        </member>
+        <member name="M:XpertGroup.Datos.DAL.MatrizDAL.GuardarJson(XpertGroupIC.Behavior.IMatrizDTO)">
+            <summary>
+            Metodo que guarda el arreglo en formato JSon, se supone que existe la ruta y se tienen los permisos de lectura y escritura
+            </summary>
+            <param name="matriz"></param>
+        </member>
+        <member name="M:XpertGroup.Datos.DAL.MatrizDAL.RecuperarJson">
+            <summary>
+            Metodo que recupera el archivo que contiene la matriz
+            </summary>
+        </member>
+    </members>
+</doc>

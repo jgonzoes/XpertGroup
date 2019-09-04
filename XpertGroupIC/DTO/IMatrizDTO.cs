@@ -7,11 +7,11 @@
     ///         <autor>Joaquin Gonzalez E.</autor>
     ///     </creacion>
     /// </summary
-    public interface IMatrizDTO
+    public class IMatrizDTO
     {
         /// <summary>
         /// Matriz que va a ser trasportada
         /// </summary>
-        int[,,] Matriz { get; set; }
+       public long[,,] Matriz { get; set; }
     }
 }
