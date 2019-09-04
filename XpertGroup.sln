@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XpertGroup", "XpertGroup\XpertGroup.csproj", "{A348A228-2BD4-4AEB-9112-AA825BF97075}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XpertGroup.Tests", "XpertGroup.Tests\XpertGroup.Tests.csproj", "{3056A981-81DF-4C42-A969-5D152533A3C6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Presentacion", "1.Presentacion", "{9F58FEE4-BF5D-479E-91EB-CA9AD40377EB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Servicio", "2.Servicio", "{C6DEBD74-6558-4673-9932-6D1C445BC7C9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Negocio", "3.Negocio", "{8239B64E-3F5D-40FB-9CCD-77D5C1E6CEEF}"
+	ProjectSection(SolutionItems) = preProject
+		MatrizBL.cs = MatrizBL.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.Datos", "4.Datos", "{51141B49-6B54-4F0A-A88B-D99AE30C85FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.Comunes", "5.Comunes", "{C57135B4-3D8A-4691-A80D-13EE5A45D603}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6.Pruebas", "6.Pruebas", "{9995981C-FEBE-4880-A79B-6A312530165E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DTO", "DTO", "{E5563C51-3673-418E-8ACF-BD83BDD3BE52}"
+	ProjectSection(SolutionItems) = preProject
+		IMatrizDTO.cs = IMatrizDTO.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{29C64F91-D132-4D00-8BAD-AE2F15EEE5F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A348A228-2BD4-4AEB-9112-AA825BF97075}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A348A228-2BD4-4AEB-9112-AA825BF97075}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A348A228-2BD4-4AEB-9112-AA825BF97075}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A348A228-2BD4-4AEB-9112-AA825BF97075}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3056A981-81DF-4C42-A969-5D152533A3C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3056A981-81DF-4C42-A969-5D152533A3C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3056A981-81DF-4C42-A969-5D152533A3C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3056A981-81DF-4C42-A969-5D152533A3C6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A348A228-2BD4-4AEB-9112-AA825BF97075} = {9F58FEE4-BF5D-479E-91EB-CA9AD40377EB}
+		{3056A981-81DF-4C42-A969-5D152533A3C6} = {9995981C-FEBE-4880-A79B-6A312530165E}
+		{E5563C51-3673-418E-8ACF-BD83BDD3BE52} = {C57135B4-3D8A-4691-A80D-13EE5A45D603}
+		{29C64F91-D132-4D00-8BAD-AE2F15EEE5F8} = {C57135B4-3D8A-4691-A80D-13EE5A45D603}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E8651627-4D19-448C-94C9-C2D85D0B41E7}
+	EndGlobalSection
+EndGlobal
