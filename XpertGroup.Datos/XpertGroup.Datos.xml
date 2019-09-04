@@ -37,6 +37,11 @@
             <param name="puntoActualizar"></param>
             <returns></returns>
         </member>
+        <member name="M:XpertGroup.Datos.DAL.MatrizDAL.RecuperarJson">
+            <summary>
+            Metodo que recupera el archivo que contiene la matriz
+            </summary>
+        </member>
         <member name="M:XpertGroup.Datos.DAL.MatrizDAL.inicializa(XpertGroupIC.Behavior.IMatrizDTO)">
             <summary>
             Metodo Privado que inicializa la matriz en ceros
@@ -48,11 +53,6 @@
             Metodo que guarda el arreglo en formato JSon, se supone que existe la ruta y se tienen los permisos de lectura y escritura
             </summary>
             <param name="matriz"></param>
-        </member>
-        <member name="M:XpertGroup.Datos.DAL.MatrizDAL.RecuperarJson">
-            <summary>
-            Metodo que recupera el archivo que contiene la matriz
-            </summary>
         </member>
     </members>
 </doc>

@@ -91,6 +91,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
+    <Compile Include="UnitTestBL.cs" />
     <Compile Include="UnitTestDAL.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -103,6 +104,10 @@
     <ProjectReference Include="..\XpertGroup.Datos\XpertGroup.Datos.csproj">
       <Project>{0c741fd8-8dfe-4852-848f-dcf67ea29eee}</Project>
       <Name>XpertGroup.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XPertGroup.Negocio\XPertGroup.Negocio.csproj">
+      <Project>{8E55CC38-532E-4BA0-8F42-5B43A4EDC515}</Project>
+      <Name>XPertGroup.Negocio</Name>
     </ProjectReference>
     <ProjectReference Include="..\XpertGroupIC\XpertGroupIC.csproj">
       <Project>{9bea987e-91fe-473b-be8f-e8214bee3a90}</Project>
