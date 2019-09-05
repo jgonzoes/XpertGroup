@@ -1,4 +1,4 @@
-﻿namespace XpertGroupIC.Behavior
+﻿namespace XpertGroupIC.DTO
 {
     /// <summary>
     ///     <decripcion>Interfas que trasporta la Matiz</decripcion>

@@ -1,4 +1,4 @@
-﻿using XpertGroupIC.Behavior;
+﻿using XpertGroupIC.DTO;
 
 namespace XpertGroup.Negocio
 {

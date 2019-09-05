@@ -1,0 +1,144 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "Este es el api que se podra consumir desde la aplicacion ",
+    "version" : "1.0.0",
+    "title" : "XpertGroup Prueba",
+    "contact" : {
+      "email" : "jgonzoe@gmail.com"
+    }
+  },
+  "basePath" : "/xpertGroup",
+  "tags" : [ {
+    "name" : "servicio",
+    "description" : "Servicio que se expone para la creacion"
+  } ],
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/solicitud" : {
+      "post" : {
+        "tags" : [ "servicio" ],
+        "summary" : "envie los requerimientos del servicio expuesta",
+        "description" : "",
+        "operationId" : "crearSolicitud",
+        "consumes" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/xml", "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Todos los parametros requeridos para enviar el servicio",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Solicitud"
+          }
+        } ],
+        "responses" : {
+          "405" : {
+            "description" : "Invalid input"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Solicitud" : {
+      "type" : "object",
+      "required" : [ "T", "atributo" ],
+      "properties" : {
+        "T" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Casos de prueba",
+          "minimum" : 1,
+          "maximum" : 50
+        },
+        "atributo" : {
+          "type" : "array",
+          "xml" : {
+            "name" : "tag",
+            "wrapped" : true
+          },
+          "items" : {
+            "$ref" : "#/definitions/atributo"
+          }
+        }
+      },
+      "xml" : {
+        "name" : "solicitud"
+      },
+      "example" : {
+        "T" : 4,
+        "atributo" : [ {
+          "M" : 147,
+          "N" : 60,
+          "operaciones" : [ {
+            "operacion" : "operacion"
+          }, {
+            "operacion" : "operacion"
+          } ]
+        }, {
+          "M" : 147,
+          "N" : 60,
+          "operaciones" : [ {
+            "operacion" : "operacion"
+          }, {
+            "operacion" : "operacion"
+          } ]
+        } ]
+      }
+    },
+    "atributo" : {
+      "type" : "object",
+      "required" : [ "M", "N", "operaciones" ],
+      "properties" : {
+        "N" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Tamaño de la matriz",
+          "minimum" : 1,
+          "maximum" : 100
+        },
+        "M" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Número de operadores",
+          "minimum" : 1,
+          "maximum" : 1000
+        },
+        "operaciones" : {
+          "type" : "array",
+          "xml" : {
+            "name" : "tag",
+            "wrapped" : true
+          },
+          "items" : {
+            "$ref" : "#/definitions/operacion"
+          }
+        }
+      },
+      "example" : {
+        "M" : 147,
+        "N" : 60,
+        "operaciones" : [ {
+          "operacion" : "operacion"
+        }, {
+          "operacion" : "operacion"
+        } ]
+      }
+    },
+    "operacion" : {
+      "type" : "object",
+      "properties" : {
+        "operacion" : {
+          "type" : "string"
+        }
+      },
+      "xml" : {
+        "name" : "operacion"
+      },
+      "example" : {
+        "operacion" : "operacion"
+      }
+    }
+  }
+}

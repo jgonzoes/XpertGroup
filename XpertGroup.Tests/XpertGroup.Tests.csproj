@@ -106,7 +106,7 @@
       <Name>XpertGroup.Datos</Name>
     </ProjectReference>
     <ProjectReference Include="..\XPertGroup.Negocio\XPertGroup.Negocio.csproj">
-      <Project>{8E55CC38-532E-4BA0-8F42-5B43A4EDC515}</Project>
+      <Project>{73265B5E-B92B-49E6-8592-BB94DD43BF82}</Project>
       <Name>XPertGroup.Negocio</Name>
     </ProjectReference>
     <ProjectReference Include="..\XpertGroupIC\XpertGroupIC.csproj">
