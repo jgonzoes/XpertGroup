@@ -73,7 +73,6 @@ namespace XPertGroup.Negocio.BL
             punto.valor = valor;
 
             matriz = _matrizBL.Value.UpdateMatriz(punto);
-
             return matriz;
         }
 
