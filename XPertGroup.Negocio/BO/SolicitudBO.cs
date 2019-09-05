@@ -7,6 +7,10 @@ namespace XPertGroup.Negocio.BO
 {
     public class SolicitudBO
     {
+        public SolicitudBO()
+        {
+            this.AtributoBO = new List<AtributoBO>();
+        }
         /// <summary>
         /// Casos de prueba
         /// </summary>

@@ -13,6 +13,9 @@ using IO.Swagger.Models;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 using System;
+using XPertGroup.Negocio.BL;
+using XPertGroup.Negocio.BO;
+using XpertGroupIC.Extensiones;
 
 namespace IO.Swagger.Controllers
 {
@@ -21,11 +24,20 @@ namespace IO.Swagger.Controllers
     /// </summary>
     [ApiController]
     public class ServicioApiController : ControllerBase
-    { 
+    {
+        private readonly Lazy<OperacionBL> _operacionBL;
+        
+        /// <summary>
+        /// Constructor de la clase para instaciar peresozamente los objetos
+        /// </summary>
+        public ServicioApiController()
+        {
+            _operacionBL = new Lazy<OperacionBL>();
+        }
         /// <summary>
         /// envie los requerimientos del servicio expuesta
         /// </summary>
-        
+
         /// <param name="body">Todos los parametros requeridos para enviar el servicio</param>
         /// <response code="405">Invalid input</response>
         [HttpPost]
@@ -33,12 +45,35 @@ namespace IO.Swagger.Controllers
         [ValidateModelState]
         [SwaggerOperation("CrearSolicitud")]
         public virtual IActionResult CrearSolicitud([FromBody]Solicitud body)
-        { 
-            //TODO: Uncomment the next line to return response 405 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(405);
+        {
+            SolicitudBO _solicitudBO = new SolicitudBO();
+            _solicitudBO = MapearModel(body);
 
+            var respuesta =_operacionBL.Value.CrearSolicitud(_solicitudBO);
 
-            throw new NotImplementedException();
+            return null;
+        }
+
+        private SolicitudBO MapearModel(Solicitud body)
+        {
+            SolicitudBO _solicitudBO = new SolicitudBO();
+            _solicitudBO.T = body.T;
+
+            foreach (var item in body.Atributo)
+            {
+                AtributoBO _atributoBO = new AtributoBO();
+                _atributoBO.M = item.M;
+                _atributoBO.N = item.N;
+                foreach (var operacion in item.Operaciones)
+                {
+                    OperacionesBO _operacionesBO = new OperacionesBO();
+                    _operacionesBO.Operacion = operacion._Operacion;
+                    _atributoBO.Operaciones.Add(_operacionesBO);
+                }
+                _solicitudBO.AtributoBO.Add(_atributoBO);
+            }
+
+            return _solicitudBO;
         }
     }
 }

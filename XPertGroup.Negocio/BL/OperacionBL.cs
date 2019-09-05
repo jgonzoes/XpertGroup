@@ -69,7 +69,7 @@ namespace XPertGroup.Negocio.BL
             punto.y = number;
             int.TryParse(evaluar[3], out number);
             punto.z = number;
-            long.TryParse(evaluar[3], out valor);
+            long.TryParse(evaluar[4], out valor);
             punto.valor = valor;
 
             matriz = _matrizBL.Value.UpdateMatriz(punto);

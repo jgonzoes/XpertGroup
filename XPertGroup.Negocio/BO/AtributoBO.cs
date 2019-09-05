@@ -5,6 +5,10 @@ namespace XPertGroup.Negocio.BO
 {
     public class AtributoBO
     {
+        public AtributoBO()
+        {
+            this.Operaciones = new List<OperacionesBO>();
+        }
         /// <summary>
         /// Tamaño de la matriz
         /// </summary>

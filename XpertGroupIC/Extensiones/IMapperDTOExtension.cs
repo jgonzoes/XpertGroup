@@ -32,7 +32,7 @@ namespace XpertGroupIC.Extensiones
         /// <param name="origen"></param>
         /// <returns>Objeto</returns>
         public static List<TR> MapperListToObject<TR, TA>(this List<TA> destino)
-            where TR : TA, new()
+
         {
             MapperConfiguration config = new MapperConfiguration(cfg => { cfg.CreateMap<TA, TR>(); });
             IMapper mapper = config.CreateMapper();
@@ -49,7 +49,7 @@ namespace XpertGroupIC.Extensiones
         /// <param name="origen"></param>
         /// <returns>Interface</returns>
         public static List<TA> MapperListToInterface<TR, TA>(this List<TR> origen)
-            where TR : TA, new()
+
         {
             MapperConfiguration config = new MapperConfiguration(cfg => { cfg.CreateMap<TR, TA>(); });
             IMapper mapper = config.CreateMapper();
