@@ -18,6 +18,5 @@
         public const string SERVICIO_ERROR_40X = "Error llamando la Solicitud: ";
 
         public const string BASE_PATH = "http://localhost/XpertGroupServicio/xpertGroup";
-
-    }
+            }
 }
