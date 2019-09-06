@@ -13,8 +13,11 @@ using IO.Swagger.Models;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 using System;
+using System.Collections.Generic;
+using Twilio.Exceptions;
 using XPertGroup.Negocio.BL;
 using XPertGroup.Negocio.BO;
+using XpertGroupIC.Constntes;
 using XpertGroupIC.Extensiones;
 
 namespace IO.Swagger.Controllers
@@ -26,7 +29,7 @@ namespace IO.Swagger.Controllers
     public class ServicioApiController : ControllerBase
     {
         private readonly Lazy<OperacionBL> _operacionBL;
-        
+
         /// <summary>
         /// Constructor de la clase para instaciar peresozamente los objetos
         /// </summary>
@@ -44,14 +47,16 @@ namespace IO.Swagger.Controllers
         [Route("/xpertGroup/solicitud")]
         [ValidateModelState]
         [SwaggerOperation("CrearSolicitud")]
-        public virtual IActionResult CrearSolicitud([FromBody]Solicitud body)
+        public virtual ActionResult<List<long>> CrearSolicitud([FromBody]Solicitud body)
         {
             SolicitudBO _solicitudBO = new SolicitudBO();
             _solicitudBO = MapearModel(body);
 
-            var respuesta =_operacionBL.Value.CrearSolicitud(_solicitudBO);
+            var respuesta = _operacionBL.Value.CrearSolicitud(_solicitudBO);
 
-            return null;
+            if (respuesta == null) throw new ApiException(400, 0, Constantes.ERROR_VALIDACION, null);
+
+            return respuesta;
         }
 
         private SolicitudBO MapearModel(Solicitud body)

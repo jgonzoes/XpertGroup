@@ -9,7 +9,9 @@
         /// Ruta de acceso a donde se va a persistir la matiz
         /// FAVOR DAR ACCESO A ESTA RUTA A LA CUENTA CON LA QUE SE EJECUTA EL PROYECTO
         /// </summary>
-       public const string rutaArchivo = @"D:\TMP\XpertMatrix.txt";
+        public const string rutaArchivo = @"D:\TMP\XpertMatrix.txt";
+
+        public const string ERROR_VALIDACION = "Se encontraron errores de validacion de datos";
 
     }
 }

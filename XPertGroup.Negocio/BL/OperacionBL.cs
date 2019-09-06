@@ -5,18 +5,34 @@ using XpertGroupIC.DTO;
 
 namespace XPertGroup.Negocio.BL
 {
+    /// <summary>
+    /// Clase qe orquesta la creacion y todo lo que necita para su ejecurcin
+    /// </summary>
     public class OperacionBL
     {
+        #region objetos de Clase
         private readonly Lazy<MatrizBL> _matrizBL;
         private readonly Lazy<ValidarEntradaBO> _validarEntradaBO;
         private List<long> respuestas;
+        #endregion
 
+        #region Constructor
+        /// <summary>
+        /// Metodo principal que genera la operacion
+        /// </summary>
         public OperacionBL()
         {
             _matrizBL = new Lazy<MatrizBL>();
             _validarEntradaBO = new Lazy<ValidarEntradaBO>();
         }
+        #endregion
 
+        #region metodos Publicos
+        /// <summary>
+        /// Metodo que crea la Solicitud
+        /// </summary>
+        /// <param name="solicitud"></param>
+        /// <returns></returns>
         public List<long> CrearSolicitud(SolicitudBO solicitud)
         {
             bool esCorrecto = false;
@@ -47,7 +63,14 @@ namespace XPertGroup.Negocio.BL
             }
             return respuestas;
         }
+        #endregion
 
+        #region metodos Privados
+        /// <summary>
+        /// Medodo que llana los parametros del atributo para la operacion
+        /// </summary>
+        /// <param name="atributo"></param>
+        /// <returns></returns>
         private IParametrosDTO parametros(AtributoBO atributo)
         {
             IParametrosDTO parametro = new IParametrosDTO();
@@ -56,6 +79,12 @@ namespace XPertGroup.Negocio.BL
             return parametro;
         }
 
+        /// <summary>
+        /// Metodo que invoca la actulizacion de un punto en la Matriz
+        /// </summary>
+        /// <param name="matriz"></param>
+        /// <param name="operador"></param>
+        /// <returns></returns>
         private IMatrizDTO ActulizeMatriz(IMatrizDTO matriz, string operador)
         {
             int number;
@@ -76,6 +105,10 @@ namespace XPertGroup.Negocio.BL
             return matriz;
         }
 
+        /// <summary>
+        /// Metodo que invoca el query de en la Matriz
+        /// </summary>
+        /// <param name="operador"></param>
         private void QueryMatriz(string operador)
         {
             int number;
@@ -100,6 +133,6 @@ namespace XPertGroup.Negocio.BL
 
             respuestas.Add(query);
         }
-
+        #endregion
     }
 }

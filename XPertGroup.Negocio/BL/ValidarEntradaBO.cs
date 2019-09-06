@@ -19,14 +19,15 @@ namespace XPertGroup.Negocio.BL
         public bool Validar(SolicitudBO solicitud)
         {
             bool esValido = true;
+            int totalErrores = 0;
 
             if (solicitud.T != solicitud.AtributoBO.Count)
-                esValido = false;
+                totalErrores++;
 
             foreach (var item in solicitud.AtributoBO)
             {
-                if (item.Operaciones.Count != item.N)
-                    esValido = false;
+                if (item.Operaciones.Count != item.M)
+                    totalErrores++;
                 foreach (var operacion in item.Operaciones)
                 {
                     string operador = operacion.Operacion;
@@ -35,56 +36,66 @@ namespace XPertGroup.Negocio.BL
                     if ((evaluar.Length == 5 || evaluar.Length == 7))
                     {
                         if (evaluar.Length == 5)
-                            esValido = validarUpDate(evaluar, item.N.Value);
+                            totalErrores += validarUpDate(evaluar, item.N.Value);
                         else
-                            esValido = validarQuery(evaluar, item.N.Value);
+                            totalErrores += validarQuery(evaluar, item.N.Value);
                     }
                     else
-                        esValido = false;
+                        totalErrores++;
                 }
             }
+
+            if (totalErrores > 0)
+                esValido = false;
+
             return esValido;
         }
 
-        private bool validarUpDate(String[] dato, long maximo)
+        private int validarUpDate(String[] dato, long maximo)
         {
             bool esValido = true;
+            int totalErrores = 0;
+
             long number;
             try
             {
                 if (dato[0] != "UPDATE")
-                    esValido = false;
+                    totalErrores++;
 
                 for (int i = 1; i < 4; i++)
                 {
                     esValido = long.TryParse(dato[i], out number);
-                    esValido = validaValor(number, maximo);
+                    totalErrores += validaValor(number, maximo);
                 }
 
                 esValido = long.TryParse(dato[4], out number);
                 if (number > Math.Pow(10, 9))
-                    esValido = false;
+                    totalErrores++;
             }
             catch (Exception)
             {
-                esValido = false;
+                totalErrores++;
             }
-            return esValido;
+
+            return totalErrores;
         }
 
-        private bool validarQuery(String[] dato, long maximo)
+        private int validarQuery(String[] dato, long maximo)
         {
             bool esValido = true;
+            int totalErrores = 0;
             long number, number2;
             try
             {
                 if (dato[0] != "QUERY")
-                    esValido = false;
+                    totalErrores++;
 
                 for (int i = 1; i < 7; i++)
                 {
-                    esValido = long.TryParse(dato[i], out number);
-                    esValido = validaValor(number, maximo);
+                    if (long.TryParse(dato[i], out number))
+                        totalErrores += validaValor(number, maximo);
+                    else
+                        totalErrores++;
                 }
 
                 for (int i = 1; i < 4; i++)
@@ -92,22 +103,22 @@ namespace XPertGroup.Negocio.BL
                     esValido = long.TryParse(dato[i], out number);
                     esValido = long.TryParse(dato[i + 3], out number2);
                     if (number > number2)
-                        esValido = false;
+                        totalErrores++;
                 }
             }
             catch (Exception)
             {
-                esValido = false;
+                totalErrores++;
             }
-            return esValido;
+            return totalErrores;
         }
 
-        private bool validaValor(long evaluado, long maximo)
+        private int validaValor(long evaluado, long maximo)
         {
-            bool esValido = true;
+            int totalErrores = 0;
             if (evaluado > maximo || evaluado < 1)
-                esValido = false;
-            return esValido;
+                totalErrores++;
+            return totalErrores;
         }
     }
 }
