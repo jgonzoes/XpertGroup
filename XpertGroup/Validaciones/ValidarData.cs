@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using XpertGroup.Models;
 
 namespace XpertGroup.Validaciones
 {
     public static class ValidarData
     {
-        public static int Validar(List<string> data)
+        public static SolicitudModel Validar(List<string> data)
         {
             bool dosArgumentos = false;
             SolicitudModel solicitud = new SolicitudModel();
-            List<AtributoModel> atributos = new List<AtributoModel>();
             List<OperacionesModel> operaciones = new List<OperacionesModel>();
 
             AtributoModel atributo = new AtributoModel();
@@ -77,7 +74,7 @@ namespace XpertGroup.Validaciones
                 }
             }
 
-            return totalErroes;
+            return solicitud;
         }
 
 

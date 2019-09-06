@@ -1,0 +1,18 @@
+﻿@model XpertGroup.Models.SalidaModel
+
+@{
+    ViewBag.Title = "ConsumirServicio";
+}
+
+<h2>Resultado de la operacion</h2>
+
+<table>
+    @foreach (var item in Model.resultados)
+    {
+        <tr>
+            <td>
+                @item
+            </td>
+        </tr>
+    }
+</table>

@@ -65,7 +65,7 @@ namespace XpertGroup.Datos.DAL
         public IMatrizDTO RecuperarJson()
         {
             IMatrizDTO matriz = new IMatrizDTO();
-            string filepath = Constantes.rutaArchivo;
+            string filepath = Constantes.RUTA_ARCHIVO;
             string result = string.Empty;
             using (StreamReader r = new StreamReader(filepath))
             {
@@ -102,7 +102,7 @@ namespace XpertGroup.Datos.DAL
         /// <param name="matriz"></param>
         private void GuardarJson(IMatrizDTO matriz)
         {
-            string rutaGuardado = Constantes.rutaArchivo;
+            string rutaGuardado = Constantes.RUTA_ARCHIVO;
             string output = JsonConvert.SerializeObject(matriz.Matriz);
 
             using (StreamWriter writer = File.CreateText(rutaGuardado))

@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using XpertGroup.Helper.Api;
+using XpertGroup.Models;
 using XpertGroup.Validaciones;
 
 namespace XpertGroup.Controllers
@@ -21,11 +21,22 @@ namespace XpertGroup.Controllers
             if (file != null && file.ContentLength > 0)
             {
                 List<string> data = LeerDatos(file);
-                ValidarData.Validar(data);
+                SalidaModel modelo = new SalidaModel();
+                SolicitudModel body = ValidarData.Validar(data);
+
+                ServicioApi llamadoApi = new ServicioApi();
+                var respuesta = llamadoApi.CrearSolicitud(body);
+
+                var content = respuesta.Content.Replace("[", "").Replace("]", ""); ;
+                var listaResultados = content.Split(',');
+
+                foreach (var item in listaResultados)
+                {
+                    modelo.resultados.Add(item);
+                }
+                return View(modelo);
             }
-
-
-            return View();
+            return RedirectToAction("Index");
         }
 
         #region Metodos Privados
